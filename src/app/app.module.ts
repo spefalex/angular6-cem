@@ -10,6 +10,9 @@ import { BoncommandeComponent } from './boncommande/boncommande.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { UserService } from "./services/user.service";
 import { HttpClientModule } from "@angular/common/http";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material';
+import {MatButtonModule, MatCheckboxModule ,MatIconModule } from '@angular/material';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +27,8 @@ import { HttpClientModule } from "@angular/common/http";
     routing,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [ UserService ],
   bootstrap: [AppComponent]
