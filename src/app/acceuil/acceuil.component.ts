@@ -10,6 +10,9 @@ export class AcceuilComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    history.pushState(null, null, location.href);
+    window.onpopstate = function(event) {
+      history.go(1);
+    };
   }
-
 }

@@ -23,13 +23,30 @@
                   name="username"
                   required
                 />
-                <mat-error *ngIf="submitted && inscriptionForm.controls.username.errors"
+                <mat-error *ngIf="inscriptionForm.controls.username.errors"
                   >Nom d'utilisateur requis
                 </mat-error>
               </mat-form-field>
             </td>
           </tr>
           <tr>
+              <tr>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        placeholder="email"
+                        formControlName="email"
+                        name="email"
+                        required
+                      />
+                      <mat-error *ngIf="inscriptionForm.controls.email.errors"
+                        >email requis
+                      </mat-error>
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <tr>
             <td>
               <mat-form-field class="example-full-width">
                 <input
@@ -40,13 +57,13 @@
                   name="password"
                   required
                 />
-                <mat-error *ngIf="submitted && inscriptionForm.controls.password.errors"
+                <mat-error *ngIf="inscriptionForm.controls.password.errors"
                   >Mot de passe requis
                 </mat-error>
               </mat-form-field>
             </td>
           </tr>
-
+          <mat-spinner *ngIf="submitted"></mat-spinner>
           <tr>
               <td>
                 <mat-form-field class="example-full-width">
@@ -58,7 +75,7 @@
                     name="password2"
                     required
                   />
-                  <mat-error *ngIf="submitted && inscriptionForm.controls.password2.errors"
+                  <mat-error *ngIf="inscriptionForm.controls.password2.errors"
                     >Mot de passe requis
                   </mat-error>
                 </mat-form-field>
@@ -77,6 +94,8 @@
   
           
         </table>
+   
+
       </form>
     </mat-card-content>
    

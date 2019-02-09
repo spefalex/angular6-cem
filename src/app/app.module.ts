@@ -9,6 +9,8 @@ import { ProduitComponent } from './produit/produit.component';
 import { BoncommandeComponent } from './boncommande/boncommande.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { UserService } from "./services/user.service";
+import { AppService } from "./services/app.service";
+import { StorageService } from "./services/storage-service";
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material';
@@ -34,7 +36,7 @@ import { FooterComponent } from './footer/footer.component';
     BrowserAnimationsModule,
     MaterialModule
   ],
-  providers: [ UserService ],
+  providers: [ UserService ,AppService ,StorageService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

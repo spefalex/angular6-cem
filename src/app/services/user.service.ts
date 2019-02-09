@@ -1,29 +1,40 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 import { User } from "../../models/user.model";
+import { reject } from "q";
 
 @Injectable()
 export class UserService {
-  constructor(private http: HttpClient) { }
-  baseUrl: string = 'http://localhost:8080/user-portal/users';
+  constructor(private http: HttpClient) {}
+  baseUrl: string = "http://127.0.0.1:3200";
 
   getUsers() {
     return this.http.get<User[]>(this.baseUrl);
   }
 
   getUserById(id: number) {
-    return this.http.get<User>(this.baseUrl + '/' + id);
+    return this.http.get<User>(this.baseUrl + "/" + id);
   }
 
   createUser(user: User) {
     return this.http.post(this.baseUrl, user);
   }
 
+  inscription(user: User) {
+    return new Promise((resolve, reject) => {
+      this.http.post(this.baseUrl + "/inscription", user).subscribe(data => {
+        resolve(data);
+      });
+    }).catch(err => {
+      reject(err);
+    });
+  }
+  
   updateUser(user: User) {
-    return this.http.put(this.baseUrl + '/' + user.id_user, user);
+    return this.http.put(this.baseUrl + "/" + user.id_user, user);
   }
 
   deleteUser(id: number) {
-    return this.http.delete(this.baseUrl + '/' + id);
+    return this.http.delete(this.baseUrl + "/" + id);
   }
 }
