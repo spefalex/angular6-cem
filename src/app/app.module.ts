@@ -13,6 +13,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material';
 import {MatButtonModule, MatCheckboxModule ,MatIconModule } from '@angular/material';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,9 @@ import {MatButtonModule, MatCheckboxModule ,MatIconModule } from '@angular/mater
     InscriptionComponent,
     AcceuilComponent,
     ProduitComponent,
-    BoncommandeComponent
+    BoncommandeComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
