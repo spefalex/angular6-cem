@@ -14,7 +14,7 @@ import { StorageService } from "./services/storage-service";
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material';
-import {MatButtonModule, MatCheckboxModule ,MatIconModule } from '@angular/material';
+import { ProduitService } from "./services/produit.service";
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 @NgModule({
@@ -36,7 +36,7 @@ import { FooterComponent } from './footer/footer.component';
     BrowserAnimationsModule,
     MaterialModule
   ],
-  providers: [ UserService ,AppService ,StorageService ],
+  providers: [ UserService ,AppService ,StorageService , ProduitService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
