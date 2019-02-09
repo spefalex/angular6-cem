@@ -1,26 +1,39 @@
-<div class="container-fluid warning">
-  <div class="row center-xs">
-    <p>Version en cours de finalisation, ne pas partager !</p>
-  </div>
-</div>
+<div style="height: 100vh;">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+    
+      <span> Hello {{ username }}</span>
+      <span class="example-spacer"></span>
+      <div fxShow="true" fxHide.lt-md="true">
+   
+        <a href="#" mat-button *ngIf="status == 'frs'">
+          <mat-icon>add_to_queue</mat-icon>
+         Ajout produits
+        </a>
+        <a href="#" mat-button *ngIf="status == 'adm'">
+          <mat-icon>supervised_user_circle</mat-icon>
+         Gerer fourniseur 
+        </a>
+        <a href="#" mat-button *ngIf="status == 'adm'">
+          <mat-icon>tab</mat-icon>
+          Commande
+        </a>
+        <a href="#" mat-button *ngIf="status == 'adm'">
+          <mat-icon>tab</mat-icon>
+         Produits valable
+        </a>
+        <a href="#" mat-button *ngIf="status == 'frs'">
+          <mat-icon>tab</mat-icon>
+          Liste Commande
+        </a>
+       
+        <a href="#" mat-button>
+          <mat-icon>account_box</mat-icon>
+         Mon compte
+        </a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
 
-<div class="wrap container-fluid">
 
-  <div class="row center-sm">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-offset-4 col-lg-8">
-      <nav>
-        <div class="icon">
-          <div class="toggle"></div>
-        </div>
-        <ul>
-          <li class="items"><a (click)="scrollToElement('video_banner')">Home</a></li>
-          <li class="items"><a (click)="scrollToElement('nos_offres')">Mes offres</a></li>
-          <li class="items"><a (click)="scrollToElement('info_client')">A propos</a></li>
-          <li class="items"><a (click)="scrollToElement('news')">News</a></li>
-          <li class="items"><a (click)="scrollToElement('temoignage')">Témoignages</a></li>
-          <!-- <li><a href="#">Devenir influenceur</a></li> -->
-        </ul>
-      </nav>
-    </div>
-  </div>
 </div>

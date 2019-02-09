@@ -56,7 +56,8 @@ export class InscriptionComponent implements OnInit {
             JSON.stringify({
               username :this.inscriptionForm.value.username,
               token: response["token"],
-              status_compte: response["statusCompte"]
+              status_compte: response["statusCompte"],
+              id_user : response["id_user"]
             })
           );
           this.appService.notify("bien authentifié");
