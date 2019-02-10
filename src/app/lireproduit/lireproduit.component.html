@@ -1,0 +1,29 @@
+<div class="col-md-6">
+  <h2> Mes produits</h2>
+  <button class="btn btn-danger" (click)="openDialog()"> Ajout produit </button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden"></th>
+      <th>ID produit</th>
+      <th>Nom produit</th>
+      <th>Type categorie</th>
+      <th>Nom fourniseur</th>
+      <th>Cout</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let prod of dataSource">
+      <td class="hidden"></td>
+      <td>{{prod.ID_PROD}}</td>
+      <td>{{prod.NOM_PRODUIT}}</td>
+      <td>{{prod.TYPE_CATEGORIE}}</td>
+      <td>{{prod.USERNAME}}</td>
+      <td>{{prod.COUT}}</td>
+      <td><button class="btn btn-danger" (click)="deleteUser(user)"> Delete</button>
+        <button class="btn btn-danger" (click)="editUser(user)" style="margin-left: 20px;"> Edit</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

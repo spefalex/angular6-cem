@@ -2,13 +2,22 @@ import { Component, OnInit } from "@angular/core";
 import { UserService } from "../services/user.service";
 import { Router } from "@angular/router";
 import { AppService } from "../services/app.service";
+export interface PeriodicElement {
+  name: string;
+  position: number;
+  weight: number;
+  symbol: string;
+}
+
+
 @Component({
   selector: "app-acceuil",
   templateUrl: "./acceuil.component.html",
   styleUrls: ["./acceuil.component.css"]
 })
 export class AcceuilComponent implements OnInit {
-  constructor(private userService: UserService, private router: Router,   private appService: AppService,) {}
+ 
+  constructor(private userService: UserService, private router: Router,   private appService: AppService) {}
 
   ngOnInit() {
     let usrname = JSON.parse(localStorage.getItem("info_user"));
@@ -24,4 +33,5 @@ export class AcceuilComponent implements OnInit {
       }
     });
   }
+
 }

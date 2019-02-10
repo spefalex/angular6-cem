@@ -17,6 +17,11 @@ import { MaterialModule } from './material';
 import { ProduitService } from "./services/produit.service";
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { LireproduitComponent } from './lireproduit/lireproduit.component';
+import { EditproduitComponent } from './editproduit/editproduit.component';
+import { EditcommandeComponent } from './editcommande/editcommande.component';
+import { LirecommandeComponent } from './lirecommande/lirecommande.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +31,11 @@ import { FooterComponent } from './footer/footer.component';
     ProduitComponent,
     BoncommandeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LireproduitComponent,
+    EditproduitComponent,
+    EditcommandeComponent,
+    LirecommandeComponent
   ],
   imports: [
     BrowserModule,

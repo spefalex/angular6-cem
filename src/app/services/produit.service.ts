@@ -20,6 +20,13 @@ export class ProduitService {
       .post(this.baseUrl +'/apiCem/ajoutProduit?token='+token, produit, options);
     
   }
+  
+  lireProduit(token) {
+    return this.http.get(this.baseUrl+ '/apiCem/lireproduits?token='+token)
+  }
+  lireProduitByUser(token,iduser) {
+    return this.http.get(this.baseUrl+ '/apiCem/lireproduitsByUser?id_user='+iduser+'&token='+token)
+  }
 
   getCategorie(token) {
     return this.http.get(this.baseUrl+ '/apiCem/lirecategorie?token='+token)
