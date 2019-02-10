@@ -17,11 +17,11 @@ export class ProduitService {
       }),
       options: any = new RequestOptions({ headers: headers });
     return this.http
-      .post(this.baseUrl + "/ajoutProduit", produit, options);
+      .post(this.baseUrl +'/apiCem/ajoutProduit?token='+token, produit, options);
     
   }
 
   getCategorie(token) {
-    return this.http.get(this.baseUrl+'/apiCem/lirecategorie?token='+token)
+    return this.http.get(this.baseUrl+ '/apiCem/lirecategorie?token='+token)
   }
 }
