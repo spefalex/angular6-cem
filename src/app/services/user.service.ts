@@ -19,6 +19,9 @@ export class UserService {
   createUser(user: User) {
     return this.http.post(this.baseUrl, user);
   }
+  verifieToken(token) {
+    return this.http.get(this.baseUrl + "/apiCem?token=" + token);
+  }
 
   inscription(user: User) {
     return new Promise((resolve, reject) => {
@@ -29,7 +32,17 @@ export class UserService {
       reject(err);
     });
   }
-  
+
+  login(user: User) {
+    return new Promise((resolve, reject) => {
+      this.http.post(this.baseUrl + "/login", user).subscribe(data => {
+        resolve(data);
+      });
+    }).catch(err => {
+      reject(err);
+    });
+  }
+
   updateUser(user: User) {
     return this.http.put(this.baseUrl + "/" + user.id_user, user);
   }
