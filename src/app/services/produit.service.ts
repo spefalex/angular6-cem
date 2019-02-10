@@ -27,8 +27,16 @@ export class ProduitService {
   lireProduitByUser(token,iduser) {
     return this.http.get(this.baseUrl+ '/apiCem/lireproduitsByUser?id_user='+iduser+'&token='+token)
   }
+  
+  lireOneProduit(idProd) {
+    return this.http.get(this.baseUrl+'/lireProduit?idProd='+idProd);
+  }
 
   getCategorie(token) {
     return this.http.get(this.baseUrl+ '/apiCem/lirecategorie?token='+token)
+  }
+
+  updateProduit(produit: Produits,token) {
+    return this.http.put(this.baseUrl + "/apiCem/updateProd?token="+token, produit);
   }
 }

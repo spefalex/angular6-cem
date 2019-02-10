@@ -4,6 +4,8 @@ import { ProduitService } from "../services/produit.service";
 import { AppService } from "../services/app.service";
 import { MatDialog, MatDialogConfig ,MatDialogRef, MAT_DIALOG_DATA} from "@angular/material";
 import { ProduitComponent } from "../produit/produit.component";
+import { EditproduitComponent } from "../editproduit/editproduit.component";
+
  
 @Component({
   selector: 'app-lireproduit',
@@ -31,12 +33,25 @@ export class LireproduitComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(ProduitComponent, {
       width: '250px',
-      //data: {'name': 'aaa', 'animal': 'bb'}
+   
     });
   
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
      
     });
+  }
+
+  editUser(id,nomproduit,cout,typecategorie) {
+    const dialogRef = this.dialog.open(EditproduitComponent, {
+      width: '250px',
+      data: { id: id, nomproduit:nomproduit,cout:cout,typecategorie:typecategorie},
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+     
+    });
+  
   }
 }

@@ -1,3 +1,73 @@
-<p>
-  editproduit works!
-</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+   
+    <span class="example-fill-remaining-space"></span>
+    <span class="example-spacer"></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Edit Produits</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="editProduitForm" >
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input
+                matInput
+                placeholder="Designation"
+                formControlName="designation"
+                name="designation"
+                required
+              />
+              <mat-error *ngIf="editProduitForm.controls.designation.errors"
+                > designation requis
+              </mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+            <tr>
+                <td>
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      placeholder="cout"
+                      formControlName="cout"
+                      name="cout"
+                      required
+                    />
+                    <mat-error *ngIf="editProduitForm.controls.cout.errors"
+                      >cout requis
+                    </mat-error>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+          <td>
+            
+            <mat-form-field>
+              <mat-select placeholder="Categorie" formControlName="categorie" name="categorie" (change)="selected($event)" >
+                <mat-option *ngFor="let f of categories" [value]="f.ID_CATEGORIE">
+                  {{f.DESIGNATION_CATEGORIE}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+       <mat-spinner *ngIf="submitted"></mat-spinner> 
+         
+      <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="onSubmit()">Modifs</button>
+          <button mat-raised-button color="primary" matDialogClose> Fermer </button>
+        </mat-card-actions>
+
+        
+      </table>
+ 
+
+    </form>
+  </mat-card-content>
+ 
+</mat-card>

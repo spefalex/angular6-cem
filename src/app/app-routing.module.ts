@@ -6,6 +6,8 @@ import  { AcceuilComponent } from './acceuil/acceuil.component';
 import  { BoncommandeComponent } from './boncommande/boncommande.component';
 import  { InscriptionComponent } from './inscription/inscription.component';
 import  { LireproduitComponent } from './lireproduit/lireproduit.component';
+import  { EditproduitComponent } from './editproduit/editproduit.component';
+import  { EditcommandeComponent } from './editcommande/editcommande.component';
 const routes: Routes = [
 
   { path: 'login', component: LoginComponent },
@@ -14,6 +16,8 @@ const routes: Routes = [
   { path: 'boncommande', component: BoncommandeComponent },
   { path: 'inscription', component: InscriptionComponent },
   { path: 'lireproduit', component: LireproduitComponent },
+  { path: 'editproduit', component: EditproduitComponent },
+  { path: 'editcomande', component: EditcommandeComponent },
   { path : '', component : LoginComponent}
 ];
 

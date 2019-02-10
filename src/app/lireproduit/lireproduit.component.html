@@ -22,7 +22,7 @@
       <td>{{prod.USERNAME}}</td>
       <td>{{prod.COUT}}</td>
       <td><button class="btn btn-danger" (click)="deleteUser(user)"> Delete</button>
-        <button class="btn btn-danger" (click)="editUser(user)" style="margin-left: 20px;"> Edit</button></td>
+        <button class="btn btn-danger" (click)="editUser(prod.ID_PROD,prod.NOM_PRODUIT,prod.COUT,prod.TYPE_CATEGORIE)" style="margin-left: 20px;"> Edit</button></td>
     </tr>
     </tbody>
   </table>
