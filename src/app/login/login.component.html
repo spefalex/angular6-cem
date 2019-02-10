@@ -23,7 +23,7 @@
                 name="username"
                 required
               />
-              <mat-error *ngIf="submitted && loginForm.controls.username.errors"
+              <mat-error *ngIf="loginForm.controls.username.errors"
                 >Nom d'utilisateur requis
               </mat-error>
             </mat-form-field>
@@ -41,7 +41,7 @@
                 name="password"
                 required
               />
-              <mat-error *ngIf="submitted && loginForm.controls.password.errors"
+              <mat-error *ngIf="loginForm.controls.password.errors"
                 >Mot de passe requis
               </mat-error>
             </mat-form-field>
