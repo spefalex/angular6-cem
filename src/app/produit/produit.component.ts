@@ -54,8 +54,8 @@ export class ProduitComponent implements OnInit {
       this.produitForm.controls['designation'].setValue(" ");
       this.produitForm.controls['cout'].setValue(" ");
       this.appService.notify(res["message"]);
-      this.router.navigateByUrl('lireproduit', {skipLocationChange: true}).then(()=>
-      this.router.navigate(["acceuil"])); ;
+      this.router.navigateByUrl('/lireproduit', {skipLocationChange: true}).then(()=>
+      this.router.navigate(["/acceuil"])); ;
      });
     }
   }

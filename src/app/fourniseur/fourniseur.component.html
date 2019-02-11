@@ -1,3 +1,31 @@
-<p>
-  fourniseur works!
-</p>
+<div class="col-md-6">
+    <h2> Mes fournisseurs </h2>
+   
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th class="hidden"></th>
+        <th>ID user</th>
+        <th>Username fournisseur</th>
+        <th>Email</th>
+      
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let prod of dataSource">
+        <td class="hidden"></td>
+        <td>{{prod.ID_USER}}</td>
+        <td>{{prod.USERNAME}}</td>
+        <td>{{prod.EMAIL}}</td>
+      
+        <td>
+          <button class="btn btn-danger" (click)="deleteFournisseur(prod.ID_USER)"> Delete users</button>
+          
+        
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  
+    <p *ngIf="statusCompte ==='adm'"> Total commande : {{ priceTotal }}</p>
+  </div>

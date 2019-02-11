@@ -9,7 +9,7 @@ export class UserService {
   baseUrl: string = "http://127.0.0.1:3200";
 
   getUsers() {
-    return this.http.get<User[]>(this.baseUrl);
+    return this.http.get(this.baseUrl +'/readUser');
   }
 
   getUserById(id: number) {
@@ -47,7 +47,7 @@ export class UserService {
     return this.http.put(this.baseUrl + "/" + user.id_user, user);
   }
 
-  deleteUser(id: number) {
-    return this.http.delete(this.baseUrl + "/" + id);
+  deleteUser(user: User) {
+    return this.http.post(this.baseUrl + "/deleteUser", user)
   }
 }

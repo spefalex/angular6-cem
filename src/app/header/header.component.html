@@ -22,7 +22,7 @@
           <mat-icon>tab</mat-icon>
          Produits valable
         </a>
-        <a href="/lirecommande" mat-button *ngIf="status == 'frs'">
+        <a href="/boncommande" mat-button *ngIf="status == 'frs'">
           <mat-icon>tab</mat-icon>
           Liste Commande
         </a>
@@ -31,6 +31,10 @@
           <mat-icon>account_box</mat-icon>
          Mon compte
         </a>
+        <a href="#" mat-button (click)="deconnecter()">
+            <mat-icon>account_box</mat-icon>
+         Se deconnecter 
+          </a>
       </div>
     </mat-toolbar-row>
   </mat-toolbar>

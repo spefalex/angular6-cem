@@ -19,6 +19,7 @@ import { EditcommandeComponent } from "../editcommande/editcommande.component";
 export class BoncommandeComponent implements OnInit {
   dataSource: any;
   priceTotal: any;
+  statusCompte : any;
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -31,6 +32,8 @@ export class BoncommandeComponent implements OnInit {
     this.commandeService.lireCommande().subscribe(data => {
       this.dataSource = data;
     });
+    let info = JSON.parse(localStorage.getItem("info_user"));
+    this.statusCompte = info.status_compte;
     this.priceTotal = localStorage.getItem("totalPrice");
   }
 
@@ -60,5 +63,10 @@ export class BoncommandeComponent implements OnInit {
         .navigateByUrl("/acceuil", { skipLocationChange: true })
         .then(() => this.router.navigate(["/boncommande"]));
     });
+  }
+
+  valideCommande ( ) {
+    this.appService.notify('commande bien validé');
+    this.router.navigate(["/acceuil"]);
   }
 }
