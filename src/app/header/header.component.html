@@ -10,11 +10,11 @@
           <mat-icon>add_to_queue</mat-icon>
          Ajout produits
         </a>
-        <a href="#" mat-button *ngIf="status == 'adm'">
+        <a href="/fourniseur" mat-button *ngIf="status == 'adm'">
           <mat-icon>supervised_user_circle</mat-icon>
          Gerer fourniseur 
         </a>
-        <a href="#" mat-button *ngIf="status == 'adm'">
+        <a href="/boncommande" mat-button *ngIf="status == 'adm'">
           <mat-icon>tab</mat-icon>
           Commande
         </a>
@@ -22,7 +22,7 @@
           <mat-icon>tab</mat-icon>
          Produits valable
         </a>
-        <a href="#" mat-button *ngIf="status == 'frs'">
+        <a href="/lirecommande" mat-button *ngIf="status == 'frs'">
           <mat-icon>tab</mat-icon>
           Liste Commande
         </a>

@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { UserService } from "./services/user.service";
 import { AppService } from "./services/app.service";
 import { StorageService } from "./services/storage-service";
+import { CommandeService } from "./services/commande.service";
 import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material';
@@ -21,6 +22,7 @@ import { LireproduitComponent } from './lireproduit/lireproduit.component';
 import { EditproduitComponent } from './editproduit/editproduit.component';
 import { EditcommandeComponent } from './editcommande/editcommande.component';
 import { LirecommandeComponent } from './lirecommande/lirecommande.component';
+import { FourniseurComponent } from './fourniseur/fourniseur.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { LirecommandeComponent } from './lirecommande/lirecommande.component';
     LireproduitComponent,
     EditproduitComponent,
     EditcommandeComponent,
-    LirecommandeComponent
+    LirecommandeComponent,
+    FourniseurComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,7 @@ import { LirecommandeComponent } from './lirecommande/lirecommande.component';
     BrowserAnimationsModule,
     MaterialModule
   ],
-  providers: [ UserService ,AppService ,StorageService , ProduitService ],
+  providers: [ UserService ,AppService ,StorageService , ProduitService , CommandeService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
