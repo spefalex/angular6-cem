@@ -72,14 +72,16 @@ export class LireproduitComponent implements OnInit {
     });
   }
 
-  commande(cout, designation_commande, id_prod) {
+  commande(cout, designation_commande, id_prod,cle) {
     this.priceTotal = parseInt(this.priceTotal) + parseInt(cout);
     let info = JSON.parse(localStorage.getItem("info_user"));
 
     const commande = {
       id_responsable: info.id_user,
       designation_commande: designation_commande,
-      id_frs: id_prod
+      id_frs: id_prod,
+      fr_id:cle,
+      cout_commande:cout
     };
     this.commandeService.ajoutCommande(commande).subscribe(res=>{
       this.appService.notify('ajouter dans le panier ');

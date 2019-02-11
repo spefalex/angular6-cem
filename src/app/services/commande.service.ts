@@ -18,8 +18,16 @@ export class CommandeService {
   lireCommande() {
     return this.http.get(this.baseUrl+'/lirecommande')
   }
+
+  lireCommandeFrs(fr_id) {
+    return this.http.get(this.baseUrl+'/readCommande?fr_id='+fr_id);
+  }
   updateCommande(commande: Commande) {
     return this.http.put(this.baseUrl + "/updateCom", commande);
+  }
+
+  validateCommande(commande: Commande) {
+    return this.http.put(this.baseUrl + "/validateCom", commande);
   }
   delCommande(commande: Commande) {
     return this.http.post(this.baseUrl + "/deleteCom", commande);
