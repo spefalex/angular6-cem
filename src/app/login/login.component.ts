@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 import { UserService } from "../services/user.service";
+import { CommandeService } from "../services/commande.service";
 import { AppService } from "../services/app.service";
 @Component({
   selector: "app-login",
@@ -18,7 +19,8 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     private userService: UserService,
-    private appService: AppService
+    private appService: AppService,
+    private commandeService : CommandeService,
   ) {}
 
   onSubmit() {
@@ -43,6 +45,15 @@ export class LoginComponent implements OnInit {
               id_user: response["id_user"]
             })
           );
+          this.commandeService.lirePriceCommandeFrs(response["id_user"]).subscribe(res=>{
+            localStorage.setItem('priceCommandeFrs',res[0].TOTALPRICE);
+          })
+
+          this.commandeService.lirePriceCommandeadm().subscribe(res=>{
+           
+            localStorage.setItem('totalPrice', res[0].TOTALPRICE);
+          })
+
           this.appService.notify("bien authentifié");
           this.router.navigate(["acceuil"]);
         } else {

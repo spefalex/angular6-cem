@@ -32,4 +32,12 @@ export class CommandeService {
   delCommande(commande: Commande) {
     return this.http.post(this.baseUrl + "/deleteCom", commande);
   }
+
+  lirePriceCommandeFrs(fr_id) {
+    return this.http.get(this.baseUrl+'/priceCommande?fr_id='+fr_id);
+  }
+
+  lirePriceCommandeadm() {
+    return this.http.get(this.baseUrl+'/lireprice')
+  }
 }

@@ -35,12 +35,16 @@ export class BoncommandeComponent implements OnInit {
       this.commandeService.lireCommandeFrs(info.id_user).subscribe(res => {
         this.dataSource = res;
       });
+
+      this.priceTotal = localStorage.getItem("priceCommandeFrs");
+
     } else {
+      this.priceTotal = localStorage.getItem("totalPrice");
       this.commandeService.lireCommande().subscribe(data => {
         this.dataSource = data;
       });
     }
-    this.priceTotal = localStorage.getItem("totalPrice");
+ 
   }
 
   editCommande(boncommande, nomproduit, typecategorie) {
