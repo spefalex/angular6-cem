@@ -14,4 +14,8 @@ export class CommandeService {
       .post(this.baseUrl +'/AjoutCommande', commande);
     
   }
+
+  lireCommande() {
+    return this.http.get(this.baseUrl+'/lirecommande')
+  }
 }

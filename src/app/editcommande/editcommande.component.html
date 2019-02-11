@@ -1,3 +1,83 @@
-<p>
-  editcommande works!
-</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+   
+    <span class="example-fill-remaining-space"></span>
+    <span class="example-spacer"></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Edit commande</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="editCommandeForm" >
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input
+                matInput
+                placeholder="boncommande"
+                formControlName="boncommande"
+                name="boncommande"
+                required
+              />
+              <mat-error *ngIf="editCommandeForm.controls.boncommande.errors"
+                > bon de commande requis
+              </mat-error>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+            <tr>
+                <td>
+                  <mat-form-field class="example-full-width">
+                    <input
+                      matInput
+                      placeholder="nomproduit"
+                      formControlName="nomproduit"
+                      name="nomproduit"
+                      required
+                    />
+                    <mat-error *ngIf="editCommandeForm.controls.nomproduit.errors"
+                      >nomp roduit requis
+                    </mat-error>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                  <tr>
+                      <td>
+                        <mat-form-field class="example-full-width">
+                          <input
+                            matInput
+                            placeholder="typecategorie"
+                            formControlName="typecategorie"
+                            name="typecategorie"
+                            required
+                          />
+                          <mat-error *ngIf="editCommandeForm.controls.typecategorie.errors"
+                            >type categorie requis 
+                          </mat-error>
+                        </mat-form-field>
+                      </td>
+                    </tr>
+                    <tr>
+          <td>
+            
+       <mat-spinner *ngIf="submitted"></mat-spinner> 
+         
+      <mat-card-actions>
+          <button mat-raised-button color="primary" (click)="onSubmit()">Modifs</button>
+          <button mat-raised-button color="primary" matDialogClose> Fermer </button>
+        </mat-card-actions>
+
+        
+      </table>
+ 
+
+    </form>
+  </mat-card-content>
+ 
+</mat-card>

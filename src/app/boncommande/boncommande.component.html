@@ -1,3 +1,34 @@
-<p>
-  boncommande works!
-</p>
+<div class="col-md-6">
+  <h2> Mes commande </h2>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden"></th>
+      <th>ID commande</th>
+      <th>Nom produit</th>
+      <th>Type categorie</th>
+      <th>Date commande</th>
+      <th>Status commande</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let prod of dataSource">
+      <td class="hidden"></td>
+      <td>{{prod.ID_COMMANDE}}</td>
+      <td>{{prod.DESIGNATION_COMMANDE}}</td>
+      <td>{{prod.ID_FRS}}</td>
+      <td>{{prod.DATE_COMMANDE | date:'dd/MM/yyyy'}} </td>
+      <td>{{prod.STATUS_COMMANDE}}</td>
+      <td><button class="btn btn-danger" (click)="deleteUser(user)"> Delete</button>
+        <button class="btn btn-danger" (click)="editCommande(prod.ID_COMMANDE,prod.DESIGNATION_COMMANDE,prod.ID_FRS)" style="margin-left: 20px;"> Edit</button>
+        
+      
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <p > Total commande : {{ priceTotal }}</p>
+</div>
