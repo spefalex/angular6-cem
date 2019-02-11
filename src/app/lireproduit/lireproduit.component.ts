@@ -25,7 +25,8 @@ export class LireproduitComponent implements OnInit {
     private produitService: ProduitService,
     private dialog: MatDialog,
     private commandeService: CommandeService,
-    private appService : AppService
+    private appService : AppService,
+    private router :Router
   ) {}
 
   ngOnInit() {
@@ -55,7 +56,7 @@ export class LireproduitComponent implements OnInit {
     });
   }
 
-  editUser(id, nomproduit, cout, typecategorie) {
+  editProduit(id, nomproduit, cout, typecategorie) {
     const dialogRef = this.dialog.open(EditproduitComponent, {
       width: "250px",
       data: {
@@ -84,5 +85,17 @@ export class LireproduitComponent implements OnInit {
       this.appService.notify('ajouter dans le panier ');
     });
     localStorage.setItem("totalPrice", this.priceTotal);
+  }
+
+  deleteProduit(id_commande) {
+    const produits = {
+      id_prod: id_commande
+    };
+
+    this.produitService.delProduits(produits).subscribe(res => {
+      this.appService.notify(res["message"]);
+      this.router.navigateByUrl('lireproduit', {skipLocationChange: true}).then(()=>
+      this.router.navigate(["acceuil"])); ;
+    });
   }
 }

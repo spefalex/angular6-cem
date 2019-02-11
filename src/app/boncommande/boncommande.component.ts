@@ -24,7 +24,7 @@ export class BoncommandeComponent implements OnInit {
     private router: Router,
     private commandeService: CommandeService,
     private appService: AppService,
-    private dialog :MatDialog
+    private dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -46,6 +46,19 @@ export class BoncommandeComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log("The dialog was closed");
+    });
+  }
+
+  delCommande(id_commande) {
+    const commande = {
+      id_commande: id_commande
+    };
+
+    this.commandeService.delCommande(commande).subscribe(res => {
+      this.appService.notify(res["message"]);
+      this.router
+        .navigateByUrl("/acceuil", { skipLocationChange: true })
+        .then(() => this.router.navigate(["/boncommande"]));
     });
   }
 }

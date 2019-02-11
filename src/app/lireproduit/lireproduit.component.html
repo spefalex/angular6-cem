@@ -21,8 +21,8 @@
       <td>{{prod.TYPE_CATEGORIE}}</td>
       <td>{{prod.USERNAME}}</td>
       <td>{{prod.COUT}}</td>
-      <td><button class="btn btn-danger" (click)="deleteUser(user)"> Delete</button>
-        <button class="btn btn-danger" (click)="editUser(prod.ID_PROD,prod.NOM_PRODUIT,prod.COUT,prod.TYPE_CATEGORIE)" style="margin-left: 20px;"> Edit</button>
+      <td><button class="btn btn-danger" (click)="deleteProduit(prod.ID_PROD)"> Delete</button>
+        <button class="btn btn-danger" (click)="editProduit(prod.ID_PROD,prod.NOM_PRODUIT,prod.COUT,prod.TYPE_CATEGORIE)" style="margin-left: 20px;"> Edit</button>
         <button class="btn btn-danger" (click)="commande(prod.COUT,prod.NOM_PRODUIT,prod.ID_PROD)" *ngIf="statusCompte ==='adm'"> commander </button>
       
       </td>

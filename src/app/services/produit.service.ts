@@ -39,4 +39,8 @@ export class ProduitService {
   updateProduit(produit: Produits,token) {
     return this.http.put(this.baseUrl + "/apiCem/updateProd?token="+token, produit);
   }
+
+  delProduits(produit: Produits) {
+    return this.http.post(this.baseUrl + "/deleteProduit", produit);
+  }
 }

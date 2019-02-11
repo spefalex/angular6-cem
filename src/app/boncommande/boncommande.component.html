@@ -21,7 +21,7 @@
       <td>{{prod.ID_FRS}}</td>
       <td>{{prod.DATE_COMMANDE | date:'dd/MM/yyyy'}} </td>
       <td>{{prod.STATUS_COMMANDE}}</td>
-      <td><button class="btn btn-danger" (click)="deleteUser(user)"> Delete</button>
+      <td><button class="btn btn-danger" (click)="delCommande(prod.ID_COMMANDE)"> Delete</button>
         <button class="btn btn-danger" (click)="editCommande(prod.ID_COMMANDE,prod.DESIGNATION_COMMANDE,prod.ID_FRS)" style="margin-left: 20px;"> Edit</button>
         
       

@@ -18,4 +18,10 @@ export class CommandeService {
   lireCommande() {
     return this.http.get(this.baseUrl+'/lirecommande')
   }
+  updateCommande(commande: Commande) {
+    return this.http.put(this.baseUrl + "/updateCom", commande);
+  }
+  delCommande(commande: Commande) {
+    return this.http.post(this.baseUrl + "/deleteCom", commande);
+  }
 }
